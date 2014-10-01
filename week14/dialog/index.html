@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        /* apply a natural box layout model to all elements */
+        *, *:before, *:after {
+            -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+        }
+        body{
+            background-color: darkgray;
+        }
+        #smoke{
+            height: 100%;
+            width: 100%;
+            text-align: center;
+        }
+        #dialog{
+            margin-left: auto;
+            margin-right: auto;
+            background-color: #ffffff;
+            border: 1px solid black;
+            width:600px;
+            height: 400px;
+
+            margin-top:100px;
+            position: relative;
+        }
+        #dialog .top{
+            background-color: darkblue;
+            color: gold;
+        }
+        .hidden{
+            display: none;
+            opacity: 0;
+        }
+        .bar{
+            position: absolute;
+            width: 100%;
+            padding: 0.5em;
+        }
+        .top{
+            top:0;
+            text-align: center;
+        }
+        .bottom{
+            bottom:0;
+            text-align: right;
+        }
+        .content{
+            background-color: #ffffff;
+            padding: 2em;
+        }
+
+    </style>
+    <script>
+        function showDialog(){
+            document.getElementById("smoke").classList.remove("hidden");
+            document.getElementById("dialog").classList.remove("hidden");
+        }
+        function setSelection(id){
+            document.getElementById("smoke").classList.add("hidden");
+            document.getElementById("dialog").classList.add("hidden");
+            document.body.innerHTML += id + "<br>";
+        }
+    </script>
+</head>
+<body>
+<button onclick="showDialog()">Open Dialog</button>
+<div class="hidden" id="smoke">
+    <div class="hidden" id="dialog">
+        <div class="top bar">
+            Dialog Title
+        </div>
+        <div class="content">
+            <p>
+                Select an option:
+            </p>
+            <select size="3" name="options" id="options">
+                <option value="1">
+                    One
+                </option>
+                <option value="2">
+                    Two
+                </option>
+                <option value="3">
+                    Three
+                </option>
+            </select>
+        </div>
+        <div class="bottom bar">
+            <button onclick="setSelection(document.getElementsByName('options')[0].value)">OK</button>
+            <button>Cancel</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -7,7 +7,8 @@
         div {
             height: 1px;
             width: 1px;
-            background-color: red;
+            background-color: green;
+            display: inline-block;
         }
     </style>
     <script>
@@ -22,8 +23,7 @@
                 next = last + delta;
                 data.push(next);
                 var d = document.createElement("div");
-                d.style.width = Math.round(100 - next)+ "px";
-                //d.style.marginLeft = Math.round(100 - next)+ "px";
+                d.style.height = Math.round(100 - next)+ "px";
                 document.body.appendChild(d);
             }
 
