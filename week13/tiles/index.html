@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <title></title>
     <style>
-        article {
+        body {
+            background-color: dimgrey;
+        }
+
+        article,
+        .article {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 200px;
+            height: 200px;
             overflow: hidden;
             background-color: #888888;
             color: white;
             display: inline-block;
             margin: 2em 0 0 2em;
-            font-family: trebuchet, "trebuchet MS", "trebuchet ms1";
+            font-family: trebuchet, "trebuchet MS", "trebuchet ms1", sans-serif;
+            background: linear-gradient(lightslategrey, darkslategrey);
+            box-shadow: 0 0 2em black;
         }
 
-        article header {
+        article header, .article .header {
             position: absolute;
             top: 0;
             width: 100%;
@@ -28,40 +35,50 @@
             background-position: top center;
         }
 
-        article header .bio {
+        .bio {
             opacity: 0;
             width: 100%;
             margin: 2em auto;
             text-align: center;
         }
-        article header:hover .bio {
+
+        header:hover .bio,
+        .header:hover .bio{
             opacity: 1;
         }
 
-        article footer {
+        article footer,
+        .article .footer {
             position: absolute;
             bottom: 0;
             width: 100%;
             height: 25%;
         }
+
+        iframe {
+            border: none;
+        }
     </style>
 </head>
 <body>
+
 <article>
     <header style="background-image:url('portrait.jpg');">
         <div class="bio">Portrait</div>
     </header>
     <footer>
-        <iframe src="http://google.com"></iframe>
+        <iframe src="http://cleverclever.com"></iframe>
     </footer>
 </article>
-<article>
-    <header style="background-image:url('landscape.jpg');">
+
+<div class="article">
+    <div class="header" style="background-image:url('landscape.jpg');">
         <div class="bio">Landscape</div>
-    </header>
-    <footer>
-        <iframe src="http://google.com"></iframe>
-    </footer>
-</article>
+    </div>
+    <div class="footer">
+        <iframe src="http://cleverclever.com"></iframe>
+    </div>
+</div>
+
 </body>
 </html>
