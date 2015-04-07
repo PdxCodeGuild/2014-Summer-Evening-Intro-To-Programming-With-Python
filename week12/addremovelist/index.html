@@ -85,7 +85,7 @@
                 r.addEventListener("click", remove);
                 var i = item.getElementsByClassName("insert")[0];
                 i.addEventListener("click", insert);
-                return  item;
+                return item;
             }
 
             function append() {
@@ -109,7 +109,10 @@
                 console.log("remove");
                 console.log(event);
                 event.target.parentElement.classList.add("transitional");
-                setTimeout(event.target.parentElement.remove, 3000);
+                setTimeout(function () {
+                    event.target.parentElement.remove();
+                }
+                , 3000);
             }
 
             return {

@@ -55,5 +55,5 @@ while True:
             outfile.write(xml_string)
             outfile.close()
         except IOError:
-            print 'Error writing XML response to file: ' + file_name
+            print( 'Error writing XML response to file: ' + file_name )
     sleep(sleep_seconds)

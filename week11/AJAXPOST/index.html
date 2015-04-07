@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <title></title>
     <script>
-        function sendPost() {
-            var formData= {
-                "key": "value"
-            }
+        function sendPost(formData) {
             var request = new XMLHttpRequest();
-            request.open("POST", "http://foo.com/submitform.php");
+            request.open("POST", "index.html");
             request.send(formData);
         }
+        var formData = {
+                "key": "value"
+            };
+        sendPost(formData);
     </script>
 </head>
 <body>

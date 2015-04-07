@@ -10,7 +10,7 @@ def total(number_list):
 
 
 if __name__ == '__main__':
-    x = raw_input("x")
-    y = raw_input("y")
-    print add(x, y)
+    x = input("x")
+    y = input("y")
+    print(add(x, y))
 
